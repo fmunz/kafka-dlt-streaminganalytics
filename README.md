@@ -33,6 +33,8 @@ Use [Databricks Repos](https://docs.databricks.com/repos/index.html#clone-a-remo
 * Run the streaming data analytics notebook.
 * Explore what happens if you set `pipelines.reset.allowed=true` in DLT and run a full refresh. 
 
+![Pipeline Config](images/resetallowed.png)
+
 ## Resources
 
 ### 🤝 Feedback and contributing
