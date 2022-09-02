@@ -64,10 +64,12 @@ conf = {'bootstrap.servers': bootstrapServers,
         'ssl.endpoint.identification.algorithm': "https",
         'sasl.mechanism': "PLAIN"
          }
-#print(f"conf {conf}")
 
 # Create Producer instance
 p = Producer(**conf)
+
+#init Faker
+f = Faker()
 
 # COMMAND ----------
 
@@ -144,16 +146,17 @@ def publish_event (event):
 
 # COMMAND ----------
 
-counter = 0                    # init counter for kafka key and output
-time_start = datetime.now()    #baseline time
 
-#init Faker
-f = Faker()
+
 
 # COMMAND ----------
 
+counter = 0                    # init counter 
+time_start = datetime.now()    # baseline time
+
 # send events until interrupted
 # number of events and pause between events varies
+
 while (True):
   # send x to y events in a burst
   for _ in range(random.randrange(12, 27)):
