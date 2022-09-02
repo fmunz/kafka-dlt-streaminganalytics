@@ -9,7 +9,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ![KafkaStream](images/kafka.jpg)
+# MAGIC ![KafkaStream](https://raw.githubusercontent.com/fmunz/kafka-dlt-streaminganalytics/main/images/kafka.jpg)
 
 # COMMAND ----------
 

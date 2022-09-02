@@ -1,7 +1,5 @@
 # kafka-dlt-streaminganalytics
-Detect COVID cases with Apache Kafka and streaming data analytics
-
-
+Detect COVID cases with Apache Kafka, Databricks Delta Live Tables, and streaming data analytics
 
 
 ## Background Story
@@ -33,13 +31,12 @@ Use [Databricks Repos](https://docs.databricks.com/repos/index.html#clone-a-remo
 * Run the event generation notebook to create events for the Kafka queue 
 * Trigger the DLT pipeline. Note, that you have to [create a pipeline first](https://docs.databricks.com/data-engineering/delta-live-tables/delta-live-tables-ui.html) to run it. 
 * Run the streaming data analytics notebook.
-* Explore what happens if you disable the setting the silver table is not a streaming DLT. 
+* Explore what happens if you set `pipelines.reset.allowed=true` in DLT
 
 ## Resources
 
 ### 🤝 Feedback and contributing
 
 * This demo is provided "as is". Please join the [Databricks Community Forum](https://community.databricks.com/) for technical questions and discussions
-* I am happy to accept pull requests but please keep in mind that the focus of this demo is on DLT and simplicity. So I am not looking for more complexity in the ML part, however I'd appreciate some cool visualizations of the final data. 
-* [Srijith](https://www.linkedin.com/in/srijith-rajamohan-ph-d-4242b9a/) provided a very first version of the Tweepy code. 
+* I am happy to accept pull requests but please keep in mind that the focus of this demo is on DLT and simplicity. 
 * Follow me on twitter for more Data and AI: [@frankmunz](https://twitter.com/frankmunz). 
