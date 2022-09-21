@@ -50,10 +50,11 @@ raw_kafka_events = (spark.readStream
 # no special keyword for streaming tables in Python DLT, just return stream
 
 # table_properties={"pipelines.reset.allowed":"false"} prevents table refresh
+# table prop must be string
 
 reset = "true"
 
-@dlt.table(comment="The data ingested from kafka topic",
+@dlt.table(comment="data ingested from kafka topic",
            table_properties={"pipelines.reset.allowed": reset}
           )
 def kafka_events():
@@ -120,15 +121,15 @@ def bpm_raw():
 
 # COMMAND ----------
 
-# @dlt.table(table_properties={"pipelines.reset.allowed":"false"})
+
 @dlt.table()
 @dlt.expect_or_drop("heart rate is set", "bpm IS NOT NULL")
 @dlt.expect_or_drop("event time is set", "time IS NOT NULL")
 @dlt.expect_or_drop("human has pulse >0", "bpm > 0")
 @dlt.expect_or_drop("tracker is valid", "model <> 'undef' ")
 
-
-def bpm_cleansed(table_properties={"pipelines.reset.allowed": reset}):
+# table_properties={"pipelines.reset.allowed": reset}
+def bpm_cleansed():
   return (
     dlt.read_stream("bpm_raw")
     .withColumnRenamed("heart_bpm", "bpm")

@@ -73,10 +73,6 @@ f = Faker()
 
 # COMMAND ----------
 
-
-
-# COMMAND ----------
-
 # returns elapsed minutes/n as in since start
 def pulse_inc():
   global time_start
@@ -146,11 +142,6 @@ def publish_event (event):
 
 # COMMAND ----------
 
-
-
-
-# COMMAND ----------
-
 counter = 0                    # init counter 
 time_start = datetime.now()    # baseline time
 
@@ -159,7 +150,7 @@ time_start = datetime.now()    # baseline time
 
 while (True):
   # send x to y events in a burst
-  for _ in range(random.randrange(12, 27)):
+  for _ in range(random.randrange(2, 13)):
     event = (create_event())
     publish_event(event)
     
