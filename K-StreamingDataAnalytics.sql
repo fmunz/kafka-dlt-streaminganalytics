@@ -2,7 +2,7 @@
 -- MAGIC %md
 -- MAGIC # Fitness Tracker: Streaming Data Analytics
 -- MAGIC * [Create Events](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#notebook/3706245661190314)
--- MAGIC * [DLT Pipeline](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#joblist/pipelines/4de02bba-a61d-4f9a-bfc7-35f26d8a29a7)
+-- MAGIC * [DLT Pipeline](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#joblist/pipelines/bf0539da-b576-4606-884d-c0fe78ffdb46)
 -- MAGIC * [Data Donation Project](https://corona-datenspende.de/science/en/reports/longcovidlaunch/)
 
 -- COMMAND ----------
@@ -36,7 +36,6 @@ select model, count (*) as c  from heart_stream.bpm_cleansed group by model orde
 -- COMMAND ----------
 
 -- MAGIC %python
--- MAGIC 
 -- MAGIC display(spark.readStream.format("delta").table("heart_stream.bpm_cleansed").
 -- MAGIC         groupBy("bpm",window("time", "1 minute")).avg("bpm").orderBy("window",ascending=True))
 

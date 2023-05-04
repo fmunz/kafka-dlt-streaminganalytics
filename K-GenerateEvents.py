@@ -117,7 +117,7 @@ def delivery_callback(err, msg):
         if err:
             sys.stderr.write('Message failed delivery: {err}')
         else:
-            print(f'{Fore.GREEN}(p:{msg.partition()} o:{msg.offset()}) {Style.RESET_ALL}',end=' - ')
+            print(f'{Fore.GREEN}(p:{msg.partition()} o:{msg.offset()}) {Style.RESET_ALL}')
 
 
 # COMMAND ----------
@@ -137,7 +137,7 @@ def publish_event (event):
     #       will most likely not serve the delivery callback for the
     #       last produce()d message.
   counter +=1
-  print(f'{Fore.BLUE}{counter}{Style.RESET_ALL}',end=" - ")
+  print(f'{Fore.BLUE}{counter}{Style.RESET_ALL}')
   
 
 # COMMAND ----------

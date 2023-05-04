@@ -2,7 +2,7 @@
 # MAGIC %md 
 # MAGIC ## Data Donation Project
 # MAGIC * [Create Events](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#notebook/3706245661190314)
-# MAGIC * [DLT Pipeline](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#joblist/pipelines/4de02bba-a61d-4f9a-bfc7-35f26d8a29a7)
+# MAGIC * [DLT Pipeline](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#joblist/pipelines/bf0539da-b576-4606-884d-c0fe78ffdb46)
 # MAGIC * [Realtime Data Analytics](https://data-ai-lakehouse.cloud.databricks.com/?o=2847375137997282#notebook/4392583634910141)
 # MAGIC * [The Data Donation Project](https://corona-datenspende.de/science/en/reports/longcovidlaunch/)
 
@@ -48,12 +48,8 @@ raw_kafka_events = (spark.readStream
     )
 
 # no special keyword for streaming tables in Python DLT, just return stream
-
-# table_properties={"pipelines.reset.allowed":"false"} prevents table refresh
-# table prop must be string
-
+# table_properties={"pipelines.reset.allowed":"false"} prevents table refresh, table prop must be string
 reset = "true"
-
 @dlt.table(comment="data ingested from kafka topic",
            table_properties={"pipelines.reset.allowed": reset}
           )
@@ -71,7 +67,7 @@ def kafka_events():
 
 # MAGIC %md 
 # MAGIC ## Schema Handling in Spark with Kafka
-# MAGIC 
+# MAGIC
 # MAGIC the spark Kafka data source does not allow schema inference, we have to define it
 
 # COMMAND ----------
